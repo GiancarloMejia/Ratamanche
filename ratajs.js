@@ -17,6 +17,14 @@ document.addEventListener("DOMContentLoaded", function() {
         grillaDiv.appendChild(cuadro);
     }
 
+    // Obtener el cuadro de audio
+    var cuadroAudio = document.getElementById("audio-play");
+
+    // Agregar evento de clic al cuadro de audio
+    cuadroAudio.addEventListener("click", function() {
+        reproducirSonido(nombreAudio);
+    });
+
     // Función para reproducir sonido
     function reproducirSonido(nombreSonido) {
         var audio = new Audio(nombreSonido);
