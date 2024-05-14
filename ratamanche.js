@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     var botonesDiv = document.getElementById("botones");
 
     // Array con los nombres de los sonidos
-    var sonidos = ["sound1", "sound2", "sound3", /* ...agrega el nombre de los demás sonidos aquí... */];
+    var sonidos = ["Ya llego tu carri", "sound2", "sound3", /* ...agrega el nombre de los demás sonidos aquí... */];
 
     // Generar los botones
     sonidos.forEach(function(sonido, index) {
