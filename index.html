@@ -11,23 +11,28 @@
             background-color: #f8f9fa;
             margin: 0;
             padding: 0;
+            overflow: hidden;
             cursor: url('https://emojicdn.elk.sh/🐭'), auto;
         }
 
         h1 {
-            color: #333;
+            color: #007bff;
+            font-size: 48px;
             margin-top: 50px;
-            margin-bottom: 20px;
+            animation: titleAnimation 2s infinite alternate;
+        }
+
+        @keyframes titleAnimation {
+            0% { text-shadow: 0 0 5px #007bff; }
+            100% { text-shadow: 0 0 20px #007bff, 0 0 40px #00c0ff, 0 0 80px #00ffff; }
         }
 
         #grilla {
             display: grid;
-            grid-template-columns: repeat(5, 150px);
-            grid-template-rows: repeat(5, 150px);
+            grid-template-columns: repeat(3, 200px);
+            grid-template-rows: repeat(3, 200px);
             gap: 20px;
-            margin: 0 auto;
-            justify-content: center;
-            align-items: center;
+            margin: 50px auto;
         }
 
         .cuadro {
@@ -43,11 +48,13 @@
             width: 100%;
             height: 100%;
             font-size: 24px;
+            border-radius: 10px;
         }
 
         .cuadro:hover {
             transform: scale(1.1);
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            animation: rotateAnimation 1s linear infinite;
         }
 
         .cuadro:hover audio {
@@ -60,6 +67,10 @@
             50% { transform: translate(0, 0); }
             75% { transform: translate(5px, 0); }
             100% { transform: translate(0, 0); }
+        }
+
+        @keyframes rotateAnimation {
+            100% { transform: rotate(360deg); }
         }
 
         audio {
@@ -78,7 +89,7 @@
             var grillaDiv = document.getElementById("grilla");
 
             // Generar la grilla de cuadros
-            for (var i = 1; i <= 25; i++) {
+            for (var i = 1; i <= 9; i++) {
                 var cuadro = document.createElement("div");
                 cuadro.textContent = "Audio " + i;
                 cuadro.classList.add("cuadro");
