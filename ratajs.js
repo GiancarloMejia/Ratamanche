@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Función para reproducir sonido
     function reproducirSonido(nombreSonido) {
-        var audio = new Audio(nombreSonido + ".mp3");
+        var audio = new Audio(nombreAudio);
         audio.play();
     }
 });
