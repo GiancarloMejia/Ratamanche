@@ -1,23 +1,20 @@
 document.addEventListener("DOMContentLoaded", function() {
     var botonesDiv = document.getElementById("botones");
 
-    // Array con los nombres de los sonidos
-    var sonidos = ["Yallegotucarri", "sound2", "sound3", /* ...agrega el nombre de los demás sonidos aquí... */];
+    // Nombre del archivo de audio
+    var nombreAudio = "Yallegotucarri.mp3";
 
-    // Generar los botones
-    sonidos.forEach(function(sonido, index) {
-        var boton = document.createElement("button");
-        boton.textContent = "Sonido " + (index + 1);
-        boton.addEventListener("click", function() {
-            reproducirSonido(sonido);
-        });
-        botonesDiv.appendChild(boton);
+    // Generar botón
+    var boton = document.createElement("button");
+    boton.textContent = "Yallegotucarri";
+    boton.addEventListener("click", function() {
+        reproducirSonido(nombreAudio);
     });
+    botonesDiv.appendChild(boton);
 
     // Función para reproducir sonido
     function reproducirSonido(nombreSonido) {
-        var audio = document.getElementById(nombreSonido);
-        audio.currentTime = 0; // Reinicia el audio si ya está reproduciéndose
+        var audio = new Audio(nombreSonido);
         audio.play();
     }
 });
