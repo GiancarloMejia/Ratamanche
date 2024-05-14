@@ -4,18 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ratamanche</title>
-    <script src="ratajs.js" defer></script>
-    <link rel="stylesheet" href="ratacss.css">
 </head>
 <body>
     <h1>Ratamanche</h1>
     <div id="grilla">
-        <!-- Los cuadros se generarán dinámicamente desde JavaScript -->
-    </div>
-    <div id="audio">
-        <div class="cuadro-audio" id="audio-play">
-            Audio
-        </div>
+        <div class="cuadro" onclick="reproducirSonido('Yallegotucarri.mp3')">Sonido 1</div>
     </div>
 </body>
+<script>
+    function reproducirSonido(nombreSonido) {
+        var audio = new Audio(nombreSonido);
+        audio.play();
+    }
+</script>
 </html>
